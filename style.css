@@ -1,0 +1,53 @@
+/* Styles personnalisés — chargés après index.css (Tailwind) */
+
+:root {
+  --couleur-principale: #2563eb;
+  --couleur-admis: #16a34a;
+  --couleur-refuse: #dc2626;
+}
+
+/* Barre de défilement discrète pour les zones de contenu */
+main,
+footer {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 transparent;
+}
+
+main::-webkit-scrollbar,
+footer::-webkit-scrollbar {
+  width: 8px;
+}
+
+main::-webkit-scrollbar-thumb,
+footer::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+/* Focus clavier visible (accessibilité) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--couleur-principale);
+  outline-offset: 2px;
+}
+
+/* Footer : liseré de couleur selon le résultat */
+.footer-bar {
+  border-top: 4px solid var(--couleur-principale);
+}
+
+.footer-badge {
+  transition: transform 0.15s ease;
+}
+
+.footer-badge:hover {
+  transform: translateY(-2px);
+}
+
+/* Respecte la préférence "réduire les animations" */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
